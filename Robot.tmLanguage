@@ -50,7 +50,7 @@
 			<key>comment</key>
 			<string>Robot Framework data tables</string>
 			<key>match</key>
-			<string>(?i)^(\*{1,3} ?)(settings?|variables?|keywords?|test cases?)( ?\*{1,3})?</string>
+			<string>(?i)^(\*{1,3} |\| \*{1,3}?)(settings?|variables?|keywords?|test cases?)(  ?\*{1,3}| ?\*{1,3} \|)?</string>
 			<key>name</key>
 			<string>string.robot.header</string>
 		</dict>
@@ -92,7 +92,7 @@
 		</dict>
 		<dict>
 			<key>begin</key>
-			<string>^[^\.{3}]\S+</string>
+			<string>^(\S+[^\| ])|((?&lt;=\| )\S*[^\s](?= \|)){1}</string>
 			<key>comment</key>
 			<string>Keywords and test cases</string>
 			<key>end</key>
